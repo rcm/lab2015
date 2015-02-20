@@ -4,7 +4,7 @@
 #include "comandos.h"
 
 /** Tamanho do buffer */
-#define BUF_SIZE	1024
+#define BUF_SIZE	10240
 
 /**
 Estrutura utilizada pelo intrpretador de comandos
