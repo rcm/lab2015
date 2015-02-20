@@ -3,10 +3,12 @@
 #include "erros.h"
 #include "comandos.h"
 
-/* Tamanho do buffer */
+/** Tamanho do buffer */
 #define BUF_SIZE	1024
 
-/* Estrutura utilizada pelo intrpretador de comandos */
+/**
+Estrutura utilizada pelo intrpretador de comandos
+*/
 typedef struct comandos {
 	char *cmd;
 	int nargs;
@@ -19,10 +21,15 @@ typedef struct comandos {
 	@returns	Código do erro que possa ter acontecido e ERRO_OK se tudo correu bem
 */
 int interpretador() {
+	/*
+		Lista de comandos
+	Para adicionar um novo comando à lista é só adicionar mais uma linha
+	nesta estrutura com a mesma forma que as anteriores antes da última linha
+	*/
 	comandos cmds[] = {
 		{"soma", 2, "soma dois números", somar},
 		{"sair", 0, "sair do programa", sair},
-		{NULL, 0, NULL, NULL}
+		{NULL, 0, NULL, NULL} /* Não colocar nada na estrutura depois desta linha */
 	};
 	char * delims = " \t\n";
 	char *cmd;
@@ -43,6 +50,7 @@ int interpretador() {
 		nargs++;
 	}
 
+	/* Procurar comando na lista de comandos */
 	while(cmds[i].cmd != NULL && strcmp(cmds[i].cmd, cmd)) {
 		i++;
 	}
@@ -54,6 +62,9 @@ int interpretador() {
 	return cmds[i].funcao(cmd, nargs, args);
 }
 
+/**
+Função principal do programa
+*/
 int main() {
 	int erro;
 	while((erro = interpretador())) {

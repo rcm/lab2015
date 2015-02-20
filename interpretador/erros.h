@@ -1,4 +1,4 @@
-/* Identificadores dos erros */
+/** Identificadores dos erros */
 typedef enum {
 	SAIR,
 	ERRO_OK,
