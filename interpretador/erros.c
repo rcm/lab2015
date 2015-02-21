@@ -9,6 +9,11 @@ typedef struct erros {
 	char *mensagem;
 } ERROS;
 
+/**
+Cada linha do array contém o código do erro e a mensagem correspondente.
+Para adicionar um novo erro, junta-se o novo código ao enum que está no erros.h
+e uma nova linha nesta estrutura na mesma posição com a mensagem correspondente
+*/
 ERROS erros[] = {
 	{SAIR, "sair do programa"},
 	{ERRO_OK, "Não há erro"},
