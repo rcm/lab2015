@@ -6,4 +6,4 @@ $(MAIN): $(OBJS)
 	$(CC) $(CFLAGS) -o $(MAIN) $(OBJS)
 
 clean:
-	rm $(MAIN) $(OBJS)
+	rm -rf $(MAIN) $(OBJS) html latex
