@@ -1,0 +1,49 @@
+Dump of assembler code for function contar_segs:
+   0x080487c0 <+0>:	push   %edi
+   0x080487c1 <+1>:	push   %esi
+   0x080487c2 <+2>:	push   %ebx
+   0x080487c3 <+3>:	mov    0x2720(%esp),%esi
+   0x080487ca <+10>:	cmpb   $0x0,0x2728(%esp)
+   0x080487d2 <+18>:	mov    0x2724(%esp),%edx
+   0x080487d9 <+25>:	mov    0x272c(%esp),%eax
+   0x080487e0 <+32>:	je     0x8048830 <contar_segs+112>
+   0x080487e2 <+34>:	lea    -0x1(%eax),%ecx
+   0x080487e5 <+37>:	xor    %edi,%edi
+   0x080487e7 <+39>:	mov    $0x1,%edx
+   0x080487ec <+44>:	xor    %eax,%eax
+   0x080487ee <+46>:	test   %esi,%esi
+   0x080487f0 <+48>:	jle    0x8048840 <contar_segs+128>
+   0x080487f2 <+50>:	imul   $0x64,%ecx,%ecx
+   0x080487f5 <+53>:	imul   $0x64,%edi,%edi
+   0x080487f8 <+56>:	add    %eax,%ecx
+   0x080487fa <+58>:	lea    0x10(%esp),%eax
+   0x080487fe <+62>:	add    %edx,%edi
+   0x08048800 <+64>:	add    %eax,%ecx
+   0x08048802 <+66>:	xor    %edx,%edx
+   0x08048804 <+68>:	xor    %eax,%eax
+   0x08048806 <+70>:	xchg   %ax,%ax
+   0x08048808 <+72>:	movzbl (%ecx),%ebx
+   0x0804880b <+75>:	cmp    $0x2e,%bl
+   0x0804880e <+78>:	je     0x804881c <contar_segs+92>
+   0x08048810 <+80>:	cmp    $0x7e,%bl
+   0x08048813 <+83>:	setne  %bl
+   0x08048816 <+86>:	cmp    $0x1,%bl
+   0x08048819 <+89>:	sbb    $0xffffffff,%eax
+   0x0804881c <+92>:	add    $0x1,%edx
+   0x0804881f <+95>:	add    %edi,%ecx
+   0x08048821 <+97>:	cmp    %esi,%edx
+   0x08048823 <+99>:	jne    0x8048808 <contar_segs+72>
+   0x08048825 <+101>:	pop    %ebx
+   0x08048826 <+102>:	pop    %esi
+   0x08048827 <+103>:	pop    %edi
+   0x08048828 <+104>:	ret    
+   0x08048829 <+105>:	lea    0x0(%esi,%eiz,1),%esi
+   0x08048830 <+112>:	mov    %edx,%esi
+   0x08048832 <+114>:	sub    $0x1,%eax
+   0x08048835 <+117>:	mov    $0x1,%edi
+   0x0804883a <+122>:	xor    %edx,%edx
+   0x0804883c <+124>:	xor    %ecx,%ecx
+   0x0804883e <+126>:	jmp    0x80487ee <contar_segs+46>
+   0x08048840 <+128>:	xor    %eax,%eax
+   0x08048842 <+130>:	jmp    0x8048825 <contar_segs+101>
+End of assembler dump.
